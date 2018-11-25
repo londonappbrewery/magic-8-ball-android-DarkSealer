@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Se face legatura cu butonul askButton
-        Button askButton = findViewById(R.id.askButton);
+        Button myButton = findViewById(R.id.askButton);
 
         //se face legatura cu imaginea bilei
-        final ImageView ballImage = findViewById(R.id.ball_image);
+        final ImageView ballDisplay = findViewById(R.id.image_eightBall);
 
-        final int[] balls = {
+        final int[] ballArray = {
                 R.drawable.ball1,
                 R.drawable.ball2,
                 R.drawable.ball3,
@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ball5
         };
 
-        askButton.setOnClickListener(new View.OnClickListener() {
+        myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Random randomAnswer = new Random();
-                int answer = randomAnswer.nextInt(4);
+                Random randomNumberGenerator = new Random();
+                int answer = randomNumberGenerator.nextInt(4);
 
-                ballImage.setImageResource(balls[answer]);
+                ballDisplay.setImageResource(ballArray[answer]);
             }
         });
 
